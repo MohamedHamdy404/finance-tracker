@@ -8953,3 +8953,1914 @@ Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot des
 2026-01-21 11:03:41 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
 2026-01-21 11:03:41 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
 2026-01-21 11:03:41 [http-nio-8080-exec-2] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:03:47 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:03:47 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:03:47 [http-nio-8080-exec-3] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:03:51 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/dashboard
+2026-01-21 11:03:51 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2026-01-21 11:03:51 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/allocations
+2026-01-21 11:03:51 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:03:51 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:03:51 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:03:51 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2026-01-21 11:03:51 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/dashboard
+2026-01-21 11:03:51 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/accounts", parameters={}
+2026-01-21 11:03:51 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/dashboard", parameters={}
+2026-01-21 11:03:51 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/allocations
+2026-01-21 11:03:51 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.AccountController#getUserAccounts(User)
+2026-01-21 11:03:51 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/allocations", parameters={}
+2026-01-21 11:03:51 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.AllocationController#getUserAllocations(User)
+2026-01-21 11:03:51 [http-nio-8080-exec-5] DEBUG c.f.t.controller.AccountController - REST request to get all accounts for user: 4
+2026-01-21 11:03:51 [http-nio-8080-exec-5] DEBUG c.f.tracker.service.AccountService - Fetching accounts for user: 4
+2026-01-21 11:03:51 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.DashboardController#getDashboard(User)
+2026-01-21 11:03:51 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        a1_0.id,
+        a1_0.account_id,
+        a1_0.allocation_status,
+        a1_0.amount,
+        a1_0.container_type,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.maturity_date,
+        a1_0.name,
+        a1_0.notes,
+        a1_0.start_date,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        allocations a1_0 
+    left join
+        users u1_0 
+            on u1_0.id=a1_0.user_id 
+    where
+        u1_0.id=?
+2026-01-21 11:03:51 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-01-21 11:03:51 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[]]
+2026-01-21 11:03:51 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-21 11:03:51 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        a1_0.id,
+        a1_0.account_type,
+        a1_0.bank_id,
+        b1_0.id,
+        b1_0.code,
+        b1_0.country,
+        b1_0.created_at,
+        b1_0.name,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.is_active,
+        a1_0.name,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    left join
+        users u1_0 
+            on u1_0.id=a1_0.user_id 
+    join
+        banks b1_0 
+            on b1_0.id=a1_0.bank_id 
+    where
+        u1_0.id=?
+2026-01-21 11:03:51 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        a1_0.id,
+        a1_0.account_type,
+        a1_0.bank_id,
+        b1_0.id,
+        b1_0.code,
+        b1_0.country,
+        b1_0.created_at,
+        b1_0.name,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.is_active,
+        a1_0.name,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    left join
+        users u1_0 
+            on u1_0.id=a1_0.user_id 
+    join
+        banks b1_0 
+            on b1_0.id=a1_0.bank_id 
+    where
+        u1_0.id=?
+2026-01-21 11:03:51 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-01-21 11:03:51 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[]]
+2026-01-21 11:03:51 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        a1_0.id,
+        a1_0.account_id,
+        a1_0.allocation_status,
+        a1_0.amount,
+        a1_0.container_type,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.maturity_date,
+        a1_0.name,
+        a1_0.notes,
+        a1_0.start_date,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        allocations a1_0 
+    left join
+        users u1_0 
+            on u1_0.id=a1_0.user_id 
+    where
+        u1_0.id=?
+2026-01-21 11:03:51 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-21 11:03:51 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        t1_0.id,
+        t1_0.account_id,
+        a1_0.id,
+        a1_0.account_type,
+        a1_0.bank_id,
+        b1_0.id,
+        b1_0.code,
+        b1_0.country,
+        b1_0.created_at,
+        b1_0.name,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.is_active,
+        a1_0.name,
+        a1_0.updated_at,
+        a1_0.user_id,
+        t1_0.amount,
+        c1_0.id,
+        c1_0.color,
+        c1_0.created_at,
+        c1_0.icon,
+        c1_0.is_active,
+        c1_0.name,
+        c1_0.type,
+        c1_0.updated_at,
+        c1_0.user_id,
+        t1_0.created_at,
+        t1_0.currency,
+        t1_0.description,
+        t1_0.fx_rate_to_base,
+        t1_0.notes,
+        t1_0.transaction_date,
+        t1_0.transaction_type,
+        t1_0.transfer_direction,
+        t1_0.transfer_group_id,
+        t1_0.updated_at,
+        t1_0.user_id 
+    from
+        transactions t1_0 
+    left join
+        users u1_0 
+            on u1_0.id=t1_0.user_id 
+    join
+        accounts a1_0 
+            on a1_0.id=t1_0.account_id 
+    left join
+        banks b1_0 
+            on b1_0.id=a1_0.bank_id 
+    left join
+        categories c1_0 
+            on c1_0.id=t1_0.category_id 
+    where
+        u1_0.id=? 
+    order by
+        t1_0.transaction_date desc
+2026-01-21 11:03:51 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-01-21 11:03:51 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [DashboardResponse(totalWealth=0, totalLiquidAssets=0, totalAllocatedFunds=0, wealthByCurrency={}, mo (truncated)...]
+2026-01-21 11:03:51 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-21 11:03:51 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:03:51 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:03:51 [http-nio-8080-exec-8] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:03:53 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:03:53 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:03:53 [http-nio-8080-exec-9] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:03:55 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:03:55 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:03:55 [http-nio-8080-exec-10] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:03:57 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:03:57 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:03:57 [http-nio-8080-exec-1] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:04:01 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:04:01 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:04:01 [http-nio-8080-exec-2] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:04:11 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:04:11 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:04:11 [http-nio-8080-exec-3] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:04:15 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:04:15 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:04:15 [http-nio-8080-exec-6] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:04:17 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:04:17 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:04:17 [http-nio-8080-exec-7] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:04:19 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:04:19 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:04:19 [http-nio-8080-exec-5] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:04:23 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:04:23 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:04:23 [http-nio-8080-exec-4] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:04:25 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:04:25 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:04:25 [http-nio-8080-exec-9] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:04:27 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:04:27 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:04:27 [http-nio-8080-exec-1] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:04:33 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:04:33 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:04:33 [http-nio-8080-exec-2] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:04:35 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:04:35 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:04:35 [http-nio-8080-exec-6] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:04:43 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:04:43 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:04:43 [http-nio-8080-exec-7] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:04:53 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:04:53 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:04:53 [http-nio-8080-exec-5] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:05:03 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:05:03 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:05:03 [http-nio-8080-exec-4] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:05:13 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:05:13 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:05:13 [http-nio-8080-exec-8] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:05:23 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:05:23 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:05:23 [http-nio-8080-exec-9] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:05:33 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:05:33 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:05:33 [http-nio-8080-exec-10] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:05:43 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:05:43 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:05:43 [http-nio-8080-exec-1] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:05:53 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:05:53 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:05:53 [http-nio-8080-exec-3] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:06:03 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:06:03 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:06:03 [http-nio-8080-exec-6] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:06:13 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:06:13 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:06:13 [http-nio-8080-exec-7] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:06:23 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:06:23 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:06:23 [http-nio-8080-exec-5] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:06:33 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:06:33 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:06:33 [http-nio-8080-exec-4] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:06:43 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:06:43 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:06:43 [http-nio-8080-exec-8] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:06:53 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:06:53 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:06:53 [http-nio-8080-exec-9] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:07:03 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:07:03 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:07:03 [http-nio-8080-exec-10] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:07:10 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2026-01-21 11:07:10 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/categories
+2026-01-21 11:07:10 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions
+2026-01-21 11:07:10 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:07:10 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:07:10 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:07:10 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/categories
+2026-01-21 11:07:10 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2026-01-21 11:07:10 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/accounts", parameters={}
+2026-01-21 11:07:10 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/categories", parameters={}
+2026-01-21 11:07:10 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.AccountController#getUserAccounts(User)
+2026-01-21 11:07:10 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.CategoryController#getUserCategories(User)
+2026-01-21 11:07:10 [http-nio-8080-exec-1] DEBUG c.f.t.controller.AccountController - REST request to get all accounts for user: 4
+2026-01-21 11:07:10 [http-nio-8080-exec-2] DEBUG c.f.t.controller.CategoryController - REST request to get all categories for user: 4
+2026-01-21 11:07:10 [http-nio-8080-exec-1] DEBUG c.f.tracker.service.AccountService - Fetching accounts for user: 4
+2026-01-21 11:07:10 [http-nio-8080-exec-2] DEBUG c.f.tracker.service.CategoryService - Fetching categories for user: 4
+2026-01-21 11:07:10 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions
+2026-01-21 11:07:10 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/transactions", parameters={}
+2026-01-21 11:07:10 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.TransactionController#getUserTransactions(User)
+2026-01-21 11:07:10 [http-nio-8080-exec-3] DEBUG c.f.t.c.TransactionController - REST request to get all transactions for user: 4
+2026-01-21 11:07:10 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        a1_0.id,
+        a1_0.account_type,
+        a1_0.bank_id,
+        b1_0.id,
+        b1_0.code,
+        b1_0.country,
+        b1_0.created_at,
+        b1_0.name,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.is_active,
+        a1_0.name,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    left join
+        users u1_0 
+            on u1_0.id=a1_0.user_id 
+    join
+        banks b1_0 
+            on b1_0.id=a1_0.bank_id 
+    where
+        u1_0.id=?
+2026-01-21 11:07:10 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id,
+        c1_0.color,
+        c1_0.created_at,
+        c1_0.icon,
+        c1_0.is_active,
+        c1_0.name,
+        c1_0.type,
+        c1_0.updated_at,
+        c1_0.user_id 
+    from
+        categories c1_0 
+    left join
+        users u1_0 
+            on u1_0.id=c1_0.user_id 
+    where
+        u1_0.id=?
+2026-01-21 11:07:10 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        t1_0.id,
+        t1_0.account_id,
+        a1_0.id,
+        a1_0.account_type,
+        a1_0.bank_id,
+        b1_0.id,
+        b1_0.code,
+        b1_0.country,
+        b1_0.created_at,
+        b1_0.name,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.is_active,
+        a1_0.name,
+        a1_0.updated_at,
+        a1_0.user_id,
+        t1_0.amount,
+        c1_0.id,
+        c1_0.color,
+        c1_0.created_at,
+        c1_0.icon,
+        c1_0.is_active,
+        c1_0.name,
+        c1_0.type,
+        c1_0.updated_at,
+        c1_0.user_id,
+        t1_0.created_at,
+        t1_0.currency,
+        t1_0.description,
+        t1_0.fx_rate_to_base,
+        t1_0.notes,
+        t1_0.transaction_date,
+        t1_0.transaction_type,
+        t1_0.transfer_direction,
+        t1_0.transfer_group_id,
+        t1_0.updated_at,
+        t1_0.user_id 
+    from
+        transactions t1_0 
+    left join
+        users u1_0 
+            on u1_0.id=t1_0.user_id 
+    join
+        accounts a1_0 
+            on a1_0.id=t1_0.account_id 
+    left join
+        banks b1_0 
+            on b1_0.id=a1_0.bank_id 
+    left join
+        categories c1_0 
+            on c1_0.id=t1_0.category_id 
+    where
+        u1_0.id=? 
+    order by
+        t1_0.transaction_date desc
+2026-01-21 11:07:10 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-01-21 11:07:10 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[]]
+2026-01-21 11:07:10 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-21 11:07:10 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-01-21 11:07:10 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[]]
+2026-01-21 11:07:10 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-01-21 11:07:10 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-21 11:07:10 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[CategoryResponse(id=1, name=food, type=EXPENSE, icon=null, color=null, displayName=food, isActive=t (truncated)...]
+2026-01-21 11:07:10 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-21 11:07:11 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:07:11 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:07:11 [http-nio-8080-exec-7] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:07:13 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:07:13 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:07:13 [http-nio-8080-exec-5] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:07:15 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:07:15 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:07:15 [http-nio-8080-exec-4] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:07:17 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:07:17 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:07:17 [http-nio-8080-exec-8] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:07:19 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/accounts
+2026-01-21 11:07:19 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:07:19 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/accounts
+2026-01-21 11:07:19 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/accounts", parameters={}
+2026-01-21 11:07:19 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.AccountController#createAccount(User, AccountCreateRequest)
+2026-01-21 11:07:19 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [AccountCreateRequest(bankId=null, name=Main Account, accountType=CHECKING, currency=EGP)]
+2026-01-21 11:07:19 [http-nio-8080-exec-9] DEBUG c.f.t.controller.AccountController - REST request to create account for user: 4
+2026-01-21 11:07:19 [http-nio-8080-exec-9] DEBUG c.f.tracker.service.AccountService - Creating account for user: 4, bank: null
+2026-01-21 11:07:19 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2026-01-21 11:07:19 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        b1_0.id,
+        b1_0.code,
+        b1_0.country,
+        b1_0.created_at,
+        b1_0.name 
+    from
+        banks b1_0 
+    where
+        b1_0.id=?
+2026-01-21 11:07:19 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.finance.tracker.entity.Account */insert 
+    into
+        accounts (account_type, bank_id, created_at, currency, is_active, name, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2026-01-21 11:07:19 [http-nio-8080-exec-9] INFO  c.f.tracker.service.AccountService - Account created: id=2, userId=4, bankId=1
+2026-01-21 11:07:19 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-01-21 11:07:19 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [AccountResponse(id=2, bankId=1, bankName=Bank Misr, name=Main Account, accountType=CHECKING, currenc (truncated)...]
+2026-01-21 11:07:19 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
+2026-01-21 11:07:19 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:07:19 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:07:19 [http-nio-8080-exec-10] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:07:20 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2026-01-21 11:07:20 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/categories
+2026-01-21 11:07:20 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:07:20 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions
+2026-01-21 11:07:20 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:07:20 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:07:20 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2026-01-21 11:07:20 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/accounts", parameters={}
+2026-01-21 11:07:20 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.AccountController#getUserAccounts(User)
+2026-01-21 11:07:20 [http-nio-8080-exec-1] DEBUG c.f.t.controller.AccountController - REST request to get all accounts for user: 4
+2026-01-21 11:07:20 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/categories
+2026-01-21 11:07:20 [http-nio-8080-exec-1] DEBUG c.f.tracker.service.AccountService - Fetching accounts for user: 4
+2026-01-21 11:07:20 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/categories", parameters={}
+2026-01-21 11:07:20 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.CategoryController#getUserCategories(User)
+2026-01-21 11:07:20 [http-nio-8080-exec-3] DEBUG c.f.t.controller.CategoryController - REST request to get all categories for user: 4
+2026-01-21 11:07:20 [http-nio-8080-exec-3] DEBUG c.f.tracker.service.CategoryService - Fetching categories for user: 4
+2026-01-21 11:07:20 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions
+2026-01-21 11:07:20 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/transactions", parameters={}
+2026-01-21 11:07:20 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.TransactionController#getUserTransactions(User)
+2026-01-21 11:07:20 [http-nio-8080-exec-6] DEBUG c.f.t.c.TransactionController - REST request to get all transactions for user: 4
+2026-01-21 11:07:20 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        a1_0.id,
+        a1_0.account_type,
+        a1_0.bank_id,
+        b1_0.id,
+        b1_0.code,
+        b1_0.country,
+        b1_0.created_at,
+        b1_0.name,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.is_active,
+        a1_0.name,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    left join
+        users u1_0 
+            on u1_0.id=a1_0.user_id 
+    join
+        banks b1_0 
+            on b1_0.id=a1_0.bank_id 
+    where
+        u1_0.id=?
+2026-01-21 11:07:20 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id,
+        c1_0.color,
+        c1_0.created_at,
+        c1_0.icon,
+        c1_0.is_active,
+        c1_0.name,
+        c1_0.type,
+        c1_0.updated_at,
+        c1_0.user_id 
+    from
+        categories c1_0 
+    left join
+        users u1_0 
+            on u1_0.id=c1_0.user_id 
+    where
+        u1_0.id=?
+2026-01-21 11:07:20 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-01-21 11:07:20 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        t1_0.id,
+        t1_0.account_id,
+        a1_0.id,
+        a1_0.account_type,
+        a1_0.bank_id,
+        b1_0.id,
+        b1_0.code,
+        b1_0.country,
+        b1_0.created_at,
+        b1_0.name,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.is_active,
+        a1_0.name,
+        a1_0.updated_at,
+        a1_0.user_id,
+        t1_0.amount,
+        c1_0.id,
+        c1_0.color,
+        c1_0.created_at,
+        c1_0.icon,
+        c1_0.is_active,
+        c1_0.name,
+        c1_0.type,
+        c1_0.updated_at,
+        c1_0.user_id,
+        t1_0.created_at,
+        t1_0.currency,
+        t1_0.description,
+        t1_0.fx_rate_to_base,
+        t1_0.notes,
+        t1_0.transaction_date,
+        t1_0.transaction_type,
+        t1_0.transfer_direction,
+        t1_0.transfer_group_id,
+        t1_0.updated_at,
+        t1_0.user_id 
+    from
+        transactions t1_0 
+    left join
+        users u1_0 
+            on u1_0.id=t1_0.user_id 
+    join
+        accounts a1_0 
+            on a1_0.id=t1_0.account_id 
+    left join
+        banks b1_0 
+            on b1_0.id=a1_0.bank_id 
+    left join
+        categories c1_0 
+            on c1_0.id=t1_0.category_id 
+    where
+        u1_0.id=? 
+    order by
+        t1_0.transaction_date desc
+2026-01-21 11:07:20 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-01-21 11:07:20 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[CategoryResponse(id=1, name=food, type=EXPENSE, icon=null, color=null, displayName=food, isActive=t (truncated)...]
+2026-01-21 11:07:20 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[AccountResponse(id=2, bankId=1, bankName=Bank Misr, name=Main Account, accountType=CHECKING, curren (truncated)...]
+2026-01-21 11:07:20 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-21 11:07:20 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-21 11:07:20 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-01-21 11:07:20 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[]]
+2026-01-21 11:07:20 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-21 11:07:21 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:07:21 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:07:21 [http-nio-8080-exec-7] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:07:23 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:07:23 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:07:23 [http-nio-8080-exec-4] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:07:25 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:07:25 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:07:25 [http-nio-8080-exec-8] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:07:27 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:07:27 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:07:27 [http-nio-8080-exec-9] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:07:29 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:07:29 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:07:29 [http-nio-8080-exec-10] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:07:31 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:07:31 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:07:31 [http-nio-8080-exec-1] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:07:33 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:07:33 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:07:33 [http-nio-8080-exec-2] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:07:35 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/categories
+2026-01-21 11:07:35 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:07:35 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/categories
+2026-01-21 11:07:35 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/categories", parameters={}
+2026-01-21 11:07:35 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.CategoryController#createCategory(User, CategoryCreateRequest)
+2026-01-21 11:07:35 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [CategoryCreateRequest(name=salary, type=INCOME, icon=null, color=null)]
+2026-01-21 11:07:35 [http-nio-8080-exec-6] DEBUG c.f.t.controller.CategoryController - REST request to create category for user: 4
+2026-01-21 11:07:35 [http-nio-8080-exec-6] DEBUG c.f.tracker.service.CategoryService - Creating category for user: 4, name: salary, type: INCOME
+2026-01-21 11:07:35 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id 
+    from
+        categories c1_0 
+    left join
+        users u1_0 
+            on u1_0.id=c1_0.user_id 
+    where
+        u1_0.id=? 
+        and c1_0.name=? 
+        and c1_0.type=? 
+    fetch
+        first ? rows only
+2026-01-21 11:07:35 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2026-01-21 11:07:35 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.finance.tracker.entity.Category */insert 
+    into
+        categories (color, created_at, icon, is_active, name, type, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2026-01-21 11:07:35 [http-nio-8080-exec-6] INFO  c.f.tracker.service.CategoryService - Category created: id=2, userId=4, name=salary
+2026-01-21 11:07:35 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-01-21 11:07:35 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [CategoryResponse(id=2, name=salary, type=INCOME, icon=null, color=null, displayName=salary, isActive (truncated)...]
+2026-01-21 11:07:35 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
+2026-01-21 11:07:35 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2026-01-21 11:07:35 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions
+2026-01-21 11:07:35 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/categories
+2026-01-21 11:07:35 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:07:35 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:07:35 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:07:35 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2026-01-21 11:07:35 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions
+2026-01-21 11:07:35 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/categories
+2026-01-21 11:07:35 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/transactions", parameters={}
+2026-01-21 11:07:35 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/accounts", parameters={}
+2026-01-21 11:07:35 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/categories", parameters={}
+2026-01-21 11:07:35 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.TransactionController#getUserTransactions(User)
+2026-01-21 11:07:35 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.AccountController#getUserAccounts(User)
+2026-01-21 11:07:35 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.CategoryController#getUserCategories(User)
+2026-01-21 11:07:35 [http-nio-8080-exec-5] DEBUG c.f.t.c.TransactionController - REST request to get all transactions for user: 4
+2026-01-21 11:07:35 [http-nio-8080-exec-7] DEBUG c.f.t.controller.AccountController - REST request to get all accounts for user: 4
+2026-01-21 11:07:35 [http-nio-8080-exec-4] DEBUG c.f.t.controller.CategoryController - REST request to get all categories for user: 4
+2026-01-21 11:07:35 [http-nio-8080-exec-7] DEBUG c.f.tracker.service.AccountService - Fetching accounts for user: 4
+2026-01-21 11:07:35 [http-nio-8080-exec-4] DEBUG c.f.tracker.service.CategoryService - Fetching categories for user: 4
+2026-01-21 11:07:35 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id,
+        c1_0.color,
+        c1_0.created_at,
+        c1_0.icon,
+        c1_0.is_active,
+        c1_0.name,
+        c1_0.type,
+        c1_0.updated_at,
+        c1_0.user_id 
+    from
+        categories c1_0 
+    left join
+        users u1_0 
+            on u1_0.id=c1_0.user_id 
+    where
+        u1_0.id=?
+2026-01-21 11:07:35 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:07:35 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        a1_0.id,
+        a1_0.account_type,
+        a1_0.bank_id,
+        b1_0.id,
+        b1_0.code,
+        b1_0.country,
+        b1_0.created_at,
+        b1_0.name,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.is_active,
+        a1_0.name,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    left join
+        users u1_0 
+            on u1_0.id=a1_0.user_id 
+    join
+        banks b1_0 
+            on b1_0.id=a1_0.bank_id 
+    where
+        u1_0.id=?
+2026-01-21 11:07:35 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:07:35 [http-nio-8080-exec-8] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:07:35 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        t1_0.id,
+        t1_0.account_id,
+        a1_0.id,
+        a1_0.account_type,
+        a1_0.bank_id,
+        b1_0.id,
+        b1_0.code,
+        b1_0.country,
+        b1_0.created_at,
+        b1_0.name,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.is_active,
+        a1_0.name,
+        a1_0.updated_at,
+        a1_0.user_id,
+        t1_0.amount,
+        c1_0.id,
+        c1_0.color,
+        c1_0.created_at,
+        c1_0.icon,
+        c1_0.is_active,
+        c1_0.name,
+        c1_0.type,
+        c1_0.updated_at,
+        c1_0.user_id,
+        t1_0.created_at,
+        t1_0.currency,
+        t1_0.description,
+        t1_0.fx_rate_to_base,
+        t1_0.notes,
+        t1_0.transaction_date,
+        t1_0.transaction_type,
+        t1_0.transfer_direction,
+        t1_0.transfer_group_id,
+        t1_0.updated_at,
+        t1_0.user_id 
+    from
+        transactions t1_0 
+    left join
+        users u1_0 
+            on u1_0.id=t1_0.user_id 
+    join
+        accounts a1_0 
+            on a1_0.id=t1_0.account_id 
+    left join
+        banks b1_0 
+            on b1_0.id=a1_0.bank_id 
+    left join
+        categories c1_0 
+            on c1_0.id=t1_0.category_id 
+    where
+        u1_0.id=? 
+    order by
+        t1_0.transaction_date desc
+2026-01-21 11:07:35 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-01-21 11:07:35 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-01-21 11:07:35 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-01-21 11:07:35 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[AccountResponse(id=2, bankId=1, bankName=Bank Misr, name=Main Account, accountType=CHECKING, curren (truncated)...]
+2026-01-21 11:07:35 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[]]
+2026-01-21 11:07:35 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[CategoryResponse(id=1, name=food, type=EXPENSE, icon=null, color=null, displayName=food, isActive=t (truncated)...]
+2026-01-21 11:07:35 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-21 11:07:35 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-21 11:07:35 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-21 11:07:37 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:07:37 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:07:37 [http-nio-8080-exec-10] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:07:39 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:07:39 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:07:39 [http-nio-8080-exec-1] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:07:41 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:07:41 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:07:41 [http-nio-8080-exec-3] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:07:43 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:07:43 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:07:43 [http-nio-8080-exec-2] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:07:47 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/transactions
+2026-01-21 11:07:47 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/transactions
+2026-01-21 11:07:47 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:07:47 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/transactions
+2026-01-21 11:07:47 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/transactions", parameters={}
+2026-01-21 11:07:47 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.TransactionController#createTransaction(User, TransactionCreateRequest)
+2026-01-21 11:07:47 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [TransactionCreateRequest(accountId=2, categoryId=2, transactionType=null, amount=25000, currency=nul (truncated)...]
+2026-01-21 11:07:47 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:07:47 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:07:47 [http-nio-8080-exec-7] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:07:47 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.finance.tracker.exception.GlobalExceptionHandler#handleValidationExceptions(MethodArgumentNotValidException, WebRequest)
+2026-01-21 11:07:47 [http-nio-8080-exec-4] WARN  c.f.t.e.GlobalExceptionHandler - Validation failed: Validation failed for argument [1] in public org.springframework.http.ResponseEntity<com.finance.tracker.dto.transaction.TransactionResponse> com.finance.tracker.controller.TransactionController.createTransaction(com.finance.tracker.entity.User,com.finance.tracker.dto.transaction.TransactionCreateRequest) with 4 errors: [Field error in object 'transactionCreateRequest' on field 'description': rejected value []; codes [NotBlank.transactionCreateRequest.description,NotBlank.description,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionCreateRequest.description,description]; arguments []; default message [description]]; default message [Description is required]] [Field error in object 'transactionCreateRequest' on field 'currency': rejected value [null]; codes [NotNull.transactionCreateRequest.currency,NotNull.currency,NotNull.com.finance.tracker.entity.enums.Currency,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionCreateRequest.currency,currency]; arguments []; default message [currency]]; default message [Currency is required]] [Field error in object 'transactionCreateRequest' on field 'transactionType': rejected value [null]; codes [NotNull.transactionCreateRequest.transactionType,NotNull.transactionType,NotNull.com.finance.tracker.entity.enums.TransactionType,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionCreateRequest.transactionType,transactionType]; arguments []; default message [transactionType]]; default message [Transaction type is required]] [Field error in object 'transactionCreateRequest' on field 'transactionDate': rejected value [null]; codes [NotNull.transactionCreateRequest.transactionDate,NotNull.transactionDate,NotNull.java.time.LocalDate,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionCreateRequest.transactionDate,transactionDate]; arguments []; default message [transactionDate]]; default message [Transaction date is required]] 
+2026-01-21 11:07:47 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-01-21 11:07:47 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [ErrorResponse(timestamp=2026-01-21T11:07:47.878793214, status=400, error=Validation Failed, message= (truncated)...]
+2026-01-21 11:07:47 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [1] in public org.springframework.http.ResponseEntity<com.finance.tracker.dto.transaction.TransactionResponse> com.finance.tracker.controller.TransactionController.createTransaction(com.finance.tracker.entity.User,com.finance.tracker.dto.transaction.TransactionCreateRequest) with 4 errors: [Field error in object 'transactionCreateRequest' on field 'description': rejected value []; codes [NotBlank.transactionCreateRequest.description,NotBlank.description,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionCreateRequest.description,description]; arguments []; default message [description]]; default message [Description is required]] [Field error in object 'transactionCreateRequest' on field 'currency': rejected value [null]; codes [NotNull.transactionCreateRequest.currency,NotNull.currency,NotNull.com.finance.tracker.entity.enums.Currency,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionCreateRequest.currency,currency]; arguments []; default message [currency]]; default message [Currency is required]] [Field error in object 'transactionCreateRequest' on field 'transactionType': rejected value [null]; codes [NotNull.transactionCreateRequest.transactionType,NotNull.transactionType,NotNull.com.finance.tracker.entity.enums.TransactionType,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionCreateRequest.transactionType,transactionType]; arguments []; default message [transactionType]]; default message [Transaction type is required]] [Field error in object 'transactionCreateRequest' on field 'transactionDate': rejected value [null]; codes [NotNull.transactionCreateRequest.transactionDate,NotNull.transactionDate,NotNull.java.time.LocalDate,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionCreateRequest.transactionDate,transactionDate]; arguments []; default message [transactionDate]]; default message [Transaction date is required]] ]
+2026-01-21 11:07:47 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 400 BAD_REQUEST
+2026-01-21 11:07:49 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:07:49 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:07:49 [http-nio-8080-exec-5] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:07:51 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:07:51 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:07:51 [http-nio-8080-exec-10] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:07:53 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:07:53 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:07:53 [http-nio-8080-exec-1] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:07:55 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:07:55 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:07:55 [http-nio-8080-exec-3] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:07:57 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:07:57 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:07:57 [http-nio-8080-exec-2] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:07:58 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions
+2026-01-21 11:07:58 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/categories
+2026-01-21 11:07:58 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:07:58 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:07:58 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/categories
+2026-01-21 11:07:58 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions
+2026-01-21 11:07:58 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/transactions", parameters={}
+2026-01-21 11:07:58 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/categories", parameters={}
+2026-01-21 11:07:58 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.TransactionController#getUserTransactions(User)
+2026-01-21 11:07:58 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.CategoryController#getUserCategories(User)
+2026-01-21 11:07:58 [http-nio-8080-exec-8] DEBUG c.f.t.controller.CategoryController - REST request to get all categories for user: 4
+2026-01-21 11:07:58 [http-nio-8080-exec-6] DEBUG c.f.t.c.TransactionController - REST request to get all transactions for user: 4
+2026-01-21 11:07:58 [http-nio-8080-exec-8] DEBUG c.f.tracker.service.CategoryService - Fetching categories for user: 4
+2026-01-21 11:07:58 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id,
+        c1_0.color,
+        c1_0.created_at,
+        c1_0.icon,
+        c1_0.is_active,
+        c1_0.name,
+        c1_0.type,
+        c1_0.updated_at,
+        c1_0.user_id 
+    from
+        categories c1_0 
+    left join
+        users u1_0 
+            on u1_0.id=c1_0.user_id 
+    where
+        u1_0.id=?
+2026-01-21 11:07:58 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        t1_0.id,
+        t1_0.account_id,
+        a1_0.id,
+        a1_0.account_type,
+        a1_0.bank_id,
+        b1_0.id,
+        b1_0.code,
+        b1_0.country,
+        b1_0.created_at,
+        b1_0.name,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.is_active,
+        a1_0.name,
+        a1_0.updated_at,
+        a1_0.user_id,
+        t1_0.amount,
+        c1_0.id,
+        c1_0.color,
+        c1_0.created_at,
+        c1_0.icon,
+        c1_0.is_active,
+        c1_0.name,
+        c1_0.type,
+        c1_0.updated_at,
+        c1_0.user_id,
+        t1_0.created_at,
+        t1_0.currency,
+        t1_0.description,
+        t1_0.fx_rate_to_base,
+        t1_0.notes,
+        t1_0.transaction_date,
+        t1_0.transaction_type,
+        t1_0.transfer_direction,
+        t1_0.transfer_group_id,
+        t1_0.updated_at,
+        t1_0.user_id 
+    from
+        transactions t1_0 
+    left join
+        users u1_0 
+            on u1_0.id=t1_0.user_id 
+    join
+        accounts a1_0 
+            on a1_0.id=t1_0.account_id 
+    left join
+        banks b1_0 
+            on b1_0.id=a1_0.bank_id 
+    left join
+        categories c1_0 
+            on c1_0.id=t1_0.category_id 
+    where
+        u1_0.id=? 
+    order by
+        t1_0.transaction_date desc
+2026-01-21 11:07:58 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-01-21 11:07:58 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-01-21 11:07:58 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[]]
+2026-01-21 11:07:58 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[CategoryResponse(id=1, name=food, type=EXPENSE, icon=null, color=null, displayName=food, isActive=t (truncated)...]
+2026-01-21 11:07:58 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-21 11:07:58 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-21 11:07:59 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:07:59 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:07:59 [http-nio-8080-exec-7] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:08:01 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:08:01 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:08:01 [http-nio-8080-exec-9] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:08:03 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:08:03 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:08:03 [http-nio-8080-exec-4] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:08:04 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2026-01-21 11:08:04 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/categories
+2026-01-21 11:08:04 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions
+2026-01-21 11:08:04 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:08:04 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:08:04 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:08:04 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2026-01-21 11:08:04 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/categories
+2026-01-21 11:08:04 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions
+2026-01-21 11:08:04 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/accounts", parameters={}
+2026-01-21 11:08:04 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/transactions", parameters={}
+2026-01-21 11:08:04 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/categories", parameters={}
+2026-01-21 11:08:04 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.AccountController#getUserAccounts(User)
+2026-01-21 11:08:04 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.CategoryController#getUserCategories(User)
+2026-01-21 11:08:04 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.TransactionController#getUserTransactions(User)
+2026-01-21 11:08:04 [http-nio-8080-exec-10] DEBUG c.f.t.c.TransactionController - REST request to get all transactions for user: 4
+2026-01-21 11:08:04 [http-nio-8080-exec-5] DEBUG c.f.t.controller.AccountController - REST request to get all accounts for user: 4
+2026-01-21 11:08:04 [http-nio-8080-exec-1] DEBUG c.f.t.controller.CategoryController - REST request to get all categories for user: 4
+2026-01-21 11:08:04 [http-nio-8080-exec-5] DEBUG c.f.tracker.service.AccountService - Fetching accounts for user: 4
+2026-01-21 11:08:04 [http-nio-8080-exec-1] DEBUG c.f.tracker.service.CategoryService - Fetching categories for user: 4
+2026-01-21 11:08:04 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id,
+        c1_0.color,
+        c1_0.created_at,
+        c1_0.icon,
+        c1_0.is_active,
+        c1_0.name,
+        c1_0.type,
+        c1_0.updated_at,
+        c1_0.user_id 
+    from
+        categories c1_0 
+    left join
+        users u1_0 
+            on u1_0.id=c1_0.user_id 
+    where
+        u1_0.id=?
+2026-01-21 11:08:04 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        a1_0.id,
+        a1_0.account_type,
+        a1_0.bank_id,
+        b1_0.id,
+        b1_0.code,
+        b1_0.country,
+        b1_0.created_at,
+        b1_0.name,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.is_active,
+        a1_0.name,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    left join
+        users u1_0 
+            on u1_0.id=a1_0.user_id 
+    join
+        banks b1_0 
+            on b1_0.id=a1_0.bank_id 
+    where
+        u1_0.id=?
+2026-01-21 11:08:04 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        t1_0.id,
+        t1_0.account_id,
+        a1_0.id,
+        a1_0.account_type,
+        a1_0.bank_id,
+        b1_0.id,
+        b1_0.code,
+        b1_0.country,
+        b1_0.created_at,
+        b1_0.name,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.is_active,
+        a1_0.name,
+        a1_0.updated_at,
+        a1_0.user_id,
+        t1_0.amount,
+        c1_0.id,
+        c1_0.color,
+        c1_0.created_at,
+        c1_0.icon,
+        c1_0.is_active,
+        c1_0.name,
+        c1_0.type,
+        c1_0.updated_at,
+        c1_0.user_id,
+        t1_0.created_at,
+        t1_0.currency,
+        t1_0.description,
+        t1_0.fx_rate_to_base,
+        t1_0.notes,
+        t1_0.transaction_date,
+        t1_0.transaction_type,
+        t1_0.transfer_direction,
+        t1_0.transfer_group_id,
+        t1_0.updated_at,
+        t1_0.user_id 
+    from
+        transactions t1_0 
+    left join
+        users u1_0 
+            on u1_0.id=t1_0.user_id 
+    join
+        accounts a1_0 
+            on a1_0.id=t1_0.account_id 
+    left join
+        banks b1_0 
+            on b1_0.id=a1_0.bank_id 
+    left join
+        categories c1_0 
+            on c1_0.id=t1_0.category_id 
+    where
+        u1_0.id=? 
+    order by
+        t1_0.transaction_date desc
+2026-01-21 11:08:04 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-01-21 11:08:04 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-01-21 11:08:04 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[CategoryResponse(id=1, name=food, type=EXPENSE, icon=null, color=null, displayName=food, isActive=t (truncated)...]
+2026-01-21 11:08:04 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[AccountResponse(id=2, bankId=1, bankName=Bank Misr, name=Main Account, accountType=CHECKING, curren (truncated)...]
+2026-01-21 11:08:04 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-21 11:08:04 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-21 11:08:04 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-01-21 11:08:04 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[]]
+2026-01-21 11:08:04 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-21 11:08:05 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:08:05 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:08:05 [http-nio-8080-exec-6] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:08:09 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:08:09 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:08:09 [http-nio-8080-exec-7] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:08:11 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:08:11 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:08:11 [http-nio-8080-exec-9] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:08:13 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:08:13 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:08:13 [http-nio-8080-exec-4] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:08:16 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2026-01-21 11:08:16 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/categories
+2026-01-21 11:08:16 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:08:16 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:08:16 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2026-01-21 11:08:16 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/accounts", parameters={}
+2026-01-21 11:08:16 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.AccountController#getUserAccounts(User)
+2026-01-21 11:08:16 [http-nio-8080-exec-1] DEBUG c.f.t.controller.AccountController - REST request to get all accounts for user: 4
+2026-01-21 11:08:16 [http-nio-8080-exec-1] DEBUG c.f.tracker.service.AccountService - Fetching accounts for user: 4
+2026-01-21 11:08:16 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/categories
+2026-01-21 11:08:16 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/categories", parameters={}
+2026-01-21 11:08:16 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.CategoryController#getUserCategories(User)
+2026-01-21 11:08:16 [http-nio-8080-exec-5] DEBUG c.f.t.controller.CategoryController - REST request to get all categories for user: 4
+2026-01-21 11:08:16 [http-nio-8080-exec-5] DEBUG c.f.tracker.service.CategoryService - Fetching categories for user: 4
+2026-01-21 11:08:16 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id,
+        c1_0.color,
+        c1_0.created_at,
+        c1_0.icon,
+        c1_0.is_active,
+        c1_0.name,
+        c1_0.type,
+        c1_0.updated_at,
+        c1_0.user_id 
+    from
+        categories c1_0 
+    left join
+        users u1_0 
+            on u1_0.id=c1_0.user_id 
+    where
+        u1_0.id=?
+2026-01-21 11:08:16 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        a1_0.id,
+        a1_0.account_type,
+        a1_0.bank_id,
+        b1_0.id,
+        b1_0.code,
+        b1_0.country,
+        b1_0.created_at,
+        b1_0.name,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.is_active,
+        a1_0.name,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    left join
+        users u1_0 
+            on u1_0.id=a1_0.user_id 
+    join
+        banks b1_0 
+            on b1_0.id=a1_0.bank_id 
+    where
+        u1_0.id=?
+2026-01-21 11:08:16 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-01-21 11:08:16 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-01-21 11:08:16 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions
+2026-01-21 11:08:16 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[CategoryResponse(id=1, name=food, type=EXPENSE, icon=null, color=null, displayName=food, isActive=t (truncated)...]
+2026-01-21 11:08:16 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[AccountResponse(id=2, bankId=1, bankName=Bank Misr, name=Main Account, accountType=CHECKING, curren (truncated)...]
+2026-01-21 11:08:16 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-21 11:08:16 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-21 11:08:16 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:08:16 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions
+2026-01-21 11:08:16 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/transactions", parameters={}
+2026-01-21 11:08:16 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.TransactionController#getUserTransactions(User)
+2026-01-21 11:08:16 [http-nio-8080-exec-2] DEBUG c.f.t.c.TransactionController - REST request to get all transactions for user: 4
+2026-01-21 11:08:16 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        t1_0.id,
+        t1_0.account_id,
+        a1_0.id,
+        a1_0.account_type,
+        a1_0.bank_id,
+        b1_0.id,
+        b1_0.code,
+        b1_0.country,
+        b1_0.created_at,
+        b1_0.name,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.is_active,
+        a1_0.name,
+        a1_0.updated_at,
+        a1_0.user_id,
+        t1_0.amount,
+        c1_0.id,
+        c1_0.color,
+        c1_0.created_at,
+        c1_0.icon,
+        c1_0.is_active,
+        c1_0.name,
+        c1_0.type,
+        c1_0.updated_at,
+        c1_0.user_id,
+        t1_0.created_at,
+        t1_0.currency,
+        t1_0.description,
+        t1_0.fx_rate_to_base,
+        t1_0.notes,
+        t1_0.transaction_date,
+        t1_0.transaction_type,
+        t1_0.transfer_direction,
+        t1_0.transfer_group_id,
+        t1_0.updated_at,
+        t1_0.user_id 
+    from
+        transactions t1_0 
+    left join
+        users u1_0 
+            on u1_0.id=t1_0.user_id 
+    join
+        accounts a1_0 
+            on a1_0.id=t1_0.account_id 
+    left join
+        banks b1_0 
+            on b1_0.id=a1_0.bank_id 
+    left join
+        categories c1_0 
+            on c1_0.id=t1_0.category_id 
+    where
+        u1_0.id=? 
+    order by
+        t1_0.transaction_date desc
+2026-01-21 11:08:16 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-01-21 11:08:16 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[]]
+2026-01-21 11:08:16 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-21 11:08:17 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:08:17 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:08:17 [http-nio-8080-exec-10] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:08:21 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:08:21 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:08:21 [http-nio-8080-exec-6] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:08:23 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:08:23 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:08:23 [http-nio-8080-exec-8] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:08:33 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:08:33 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:08:33 [http-nio-8080-exec-7] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:08:37 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:08:37 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:08:37 [http-nio-8080-exec-9] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:08:43 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:08:43 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:08:43 [http-nio-8080-exec-4] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:08:53 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:08:53 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:08:53 [http-nio-8080-exec-1] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:08:55 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:08:55 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:08:55 [http-nio-8080-exec-3] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:08:59 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:08:59 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:08:59 [http-nio-8080-exec-5] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:09:03 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:09:03 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:09:03 [http-nio-8080-exec-2] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:09:05 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:09:05 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:09:05 [http-nio-8080-exec-10] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:09:11 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:09:11 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:09:11 [http-nio-8080-exec-6] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:09:13 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:09:13 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:09:13 [http-nio-8080-exec-8] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:09:15 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:09:15 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:09:15 [http-nio-8080-exec-7] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:09:23 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:09:23 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:09:23 [http-nio-8080-exec-9] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:09:25 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:09:25 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:09:25 [http-nio-8080-exec-4] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:09:29 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:09:29 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:09:29 [http-nio-8080-exec-1] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:09:34 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-21 11:09:34 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-21 11:09:34 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-21 11:09:37 [main] INFO  c.f.t.FinanceTrackerApplication - Starting FinanceTrackerApplication using Java 17.0.17 with PID 50773 (/home/ubuntu/finance-tracker/target/tracker-0.0.1-SNAPSHOT.jar started by ubuntu in /home/ubuntu/finance-tracker)
+2026-01-21 11:09:37 [main] DEBUG c.f.t.FinanceTrackerApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2026-01-21 11:09:37 [main] INFO  c.f.t.FinanceTrackerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-21 11:09:38 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-21 11:09:38 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 75 ms. Found 6 JPA repository interfaces.
+2026-01-21 11:09:39 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-21 11:09:39 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-21 11:09:39 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2026-01-21 11:09:39 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-21 11:09:39 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1993 ms
+2026-01-21 11:09:39 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-21 11:09:39 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@51b87df7
+2026-01-21 11:09:39 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-21 11:09:40 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2026-01-21 11:09:40 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2026-01-21 11:09:40 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2026-01-21 11:09:40 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/finance_tracker (PostgreSQL 14.20)
+2026-01-21 11:09:40 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.024s)
+2026-01-21 11:09:40 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+2026-01-21 11:09:40 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-01-21 11:09:40 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-21 11:09:40 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-01-21 11:09:40 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-21 11:09:40 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-21 11:09:40 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-21 11:09:41 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-21 11:09:41 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-21 11:09:42 [main] DEBUG c.f.tracker.security.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+2026-01-21 11:09:42 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-21 11:09:43 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 34 mappings in 'requestMappingHandlerMapping'
+2026-01-21 11:09:43 [main] DEBUG o.s.w.s.c.a.WebMvcConfigurer - Default resource handling disabled
+2026-01-21 11:09:43 [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2026-01-21 11:09:43 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@54c3bae, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6fad6743, org.springframework.security.web.context.SecurityContextHolderFilter@a555005, org.springframework.security.web.header.HeaderWriterFilter@2b5854a7, org.springframework.web.filter.CorsFilter@68a0a4ae, org.springframework.security.web.authentication.logout.LogoutFilter@10ac5a14, com.finance.tracker.security.AuthTokenFilter@5643052d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@42d039ef, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@397ff526, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@426753a6, org.springframework.security.web.session.SessionManagementFilter@50cdaf32, org.springframework.security.web.access.ExceptionTranslationFilter@3d44f15d, org.springframework.security.web.access.intercept.AuthorizationFilter@7473cf13]
+2026-01-21 11:09:43 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-01-21 11:09:43 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-01-21 11:09:43 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-01-21 11:09:43 [main] INFO  c.f.t.FinanceTrackerApplication - Started FinanceTrackerApplication in 6.7 seconds (process running for 7.183)
+2026-01-21 11:09:45 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-21 11:09:45 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-01-21 11:09:45 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2026-01-21 11:09:45 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2026-01-21 11:09:45 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2026-01-21 11:09:45 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@264e0b8e
+2026-01-21 11:09:45 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@7a6433f3
+2026-01-21 11:09:45 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-01-21 11:09:45 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-01-21 11:09:45 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:09:45 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:09:45 [http-nio-8080-exec-1] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:09:51 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:09:51 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:09:51 [http-nio-8080-exec-2] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:09:55 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:09:55 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:09:55 [http-nio-8080-exec-3] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:10:05 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/transactions
+2026-01-21 11:10:05 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:10:05 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/transactions
+2026-01-21 11:10:05 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/transactions", parameters={}
+2026-01-21 11:10:05 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.TransactionController#createTransaction(User, TransactionCreateRequest)
+2026-01-21 11:10:05 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:10:05 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:10:05 [http-nio-8080-exec-5] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:10:05 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [TransactionCreateRequest(accountId=1, categoryId=null, transactionType=null, amount=100, currency=nu (truncated)...]
+2026-01-21 11:10:05 [http-nio-8080-exec-4] DEBUG c.f.t.c.TransactionController - REST request to create transaction for user: 2
+2026-01-21 11:10:05 [http-nio-8080-exec-4] DEBUG c.f.t.service.TransactionService - Creating transaction for user: 2, type: null
+2026-01-21 11:10:05 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2026-01-21 11:10:05 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        a 
+    FROM
+        Account a 
+    WHERE
+        a.id = :accountId 
+        AND a.user.id = :userId */ select
+            a1_0.id,
+            a1_0.account_type,
+            a1_0.bank_id,
+            b1_0.id,
+            b1_0.code,
+            b1_0.country,
+            b1_0.created_at,
+            b1_0.name,
+            a1_0.created_at,
+            a1_0.currency,
+            a1_0.is_active,
+            a1_0.name,
+            a1_0.updated_at,
+            a1_0.user_id 
+        from
+            accounts a1_0 
+        join
+            banks b1_0 
+                on b1_0.id=a1_0.bank_id 
+        where
+            a1_0.id=? 
+            and a1_0.user_id=?
+2026-01-21 11:10:05 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.finance.tracker.entity.Transaction */insert 
+    into
+        transactions (account_id, amount, category_id, created_at, currency, description, fx_rate_to_base, notes, transaction_date, transaction_type, transfer_direction, transfer_group_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-01-21 11:10:05 [http-nio-8080-exec-4] INFO  c.f.t.service.TransactionService - Transaction created: id=1, type=EXPENSE
+2026-01-21 11:10:06 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-21 11:10:06 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [TransactionResponse(id=1, accountId=1, accountName=Bank Misr - Test Account, categoryId=null, catego (truncated)...]
+2026-01-21 11:10:06 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
+2026-01-21 11:10:07 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:10:07 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:10:07 [http-nio-8080-exec-6] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:10:15 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:10:15 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:10:15 [http-nio-8080-exec-7] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:10:17 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:10:17 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:10:17 [http-nio-8080-exec-8] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:10:21 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:10:21 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:10:21 [http-nio-8080-exec-9] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:10:24 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/accounts
+2026-01-21 11:10:24 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:10:24 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/accounts
+2026-01-21 11:10:24 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/accounts", parameters={}
+2026-01-21 11:10:24 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.AccountController#getUserAccounts(User)
+2026-01-21 11:10:24 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/categories
+2026-01-21 11:10:24 [http-nio-8080-exec-10] DEBUG c.f.t.controller.AccountController - REST request to get all accounts for user: 4
+2026-01-21 11:10:24 [http-nio-8080-exec-10] DEBUG c.f.tracker.service.AccountService - Fetching accounts for user: 4
+2026-01-21 11:10:24 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:10:24 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/transactions
+2026-01-21 11:10:24 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        a1_0.id,
+        a1_0.account_type,
+        a1_0.bank_id,
+        b1_0.id,
+        b1_0.code,
+        b1_0.country,
+        b1_0.created_at,
+        b1_0.name,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.is_active,
+        a1_0.name,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    left join
+        users u1_0 
+            on u1_0.id=a1_0.user_id 
+    join
+        banks b1_0 
+            on b1_0.id=a1_0.bank_id 
+    where
+        u1_0.id=?
+2026-01-21 11:10:24 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/categories
+2026-01-21 11:10:24 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/categories", parameters={}
+2026-01-21 11:10:24 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.CategoryController#getUserCategories(User)
+2026-01-21 11:10:24 [http-nio-8080-exec-1] DEBUG c.f.t.controller.CategoryController - REST request to get all categories for user: 4
+2026-01-21 11:10:24 [http-nio-8080-exec-1] DEBUG c.f.tracker.service.CategoryService - Fetching categories for user: 4
+2026-01-21 11:10:24 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.base_currency,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-01-21 11:10:24 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        c1_0.id,
+        c1_0.color,
+        c1_0.created_at,
+        c1_0.icon,
+        c1_0.is_active,
+        c1_0.name,
+        c1_0.type,
+        c1_0.updated_at,
+        c1_0.user_id 
+    from
+        categories c1_0 
+    left join
+        users u1_0 
+            on u1_0.id=c1_0.user_id 
+    where
+        u1_0.id=?
+2026-01-21 11:10:24 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/transactions
+2026-01-21 11:10:24 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/transactions", parameters={}
+2026-01-21 11:10:24 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.finance.tracker.controller.TransactionController#getUserTransactions(User)
+2026-01-21 11:10:24 [http-nio-8080-exec-2] DEBUG c.f.t.c.TransactionController - REST request to get all transactions for user: 4
+2026-01-21 11:10:24 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-01-21 11:10:24 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-01-21 11:10:24 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[CategoryResponse(id=1, name=food, type=EXPENSE, icon=null, color=null, displayName=food, isActive=t (truncated)...]
+2026-01-21 11:10:24 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        t1_0.id,
+        t1_0.account_id,
+        a1_0.id,
+        a1_0.account_type,
+        a1_0.bank_id,
+        b1_0.id,
+        b1_0.code,
+        b1_0.country,
+        b1_0.created_at,
+        b1_0.name,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.is_active,
+        a1_0.name,
+        a1_0.updated_at,
+        a1_0.user_id,
+        t1_0.amount,
+        c1_0.id,
+        c1_0.color,
+        c1_0.created_at,
+        c1_0.icon,
+        c1_0.is_active,
+        c1_0.name,
+        c1_0.type,
+        c1_0.updated_at,
+        c1_0.user_id,
+        t1_0.created_at,
+        t1_0.currency,
+        t1_0.description,
+        t1_0.fx_rate_to_base,
+        t1_0.notes,
+        t1_0.transaction_date,
+        t1_0.transaction_type,
+        t1_0.transfer_direction,
+        t1_0.transfer_group_id,
+        t1_0.updated_at,
+        t1_0.user_id 
+    from
+        transactions t1_0 
+    left join
+        users u1_0 
+            on u1_0.id=t1_0.user_id 
+    join
+        accounts a1_0 
+            on a1_0.id=t1_0.account_id 
+    left join
+        banks b1_0 
+            on b1_0.id=a1_0.bank_id 
+    left join
+        categories c1_0 
+            on c1_0.id=t1_0.category_id 
+    where
+        u1_0.id=? 
+    order by
+        t1_0.transaction_date desc
+2026-01-21 11:10:24 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-21 11:10:24 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[AccountResponse(id=2, bankId=1, bankName=Bank Misr, name=Main Account, accountType=CHECKING, curren (truncated)...]
+2026-01-21 11:10:24 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2026-01-21 11:10:24 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[]]
+2026-01-21 11:10:24 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-21 11:10:24 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-21 11:10:25 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:10:25 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:10:25 [http-nio-8080-exec-5] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource
+2026-01-21 11:10:27 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing POST /
+2026-01-21 11:10:27 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-01-21 11:10:27 [http-nio-8080-exec-4] ERROR c.f.t.security.AuthEntryPointJwt - Unauthorized error: Full authentication is required to access this resource

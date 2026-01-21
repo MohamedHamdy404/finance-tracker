@@ -26,23 +26,19 @@ public class TransactionCreateRequest {
 
     private Long categoryId;
 
-    @NotNull(message = "Transaction type is required")
-    private TransactionType transactionType;
+    private TransactionType transactionType; // Optional - will be inferred if not provided
 
     @NotNull(message = "Amount is required")
     @Positive(message = "Amount must be positive")
     @Digits(integer = 13, fraction = 2, message = "Amount must have max 13 digits before decimal and 2 after")
     private BigDecimal amount;
 
-    @NotNull(message = "Currency is required")
-    private Currency currency;
+    private Currency currency; // Optional - will use account currency if not provided
 
-    @NotNull(message = "Transaction date is required")
-    private LocalDate transactionDate;
+    private LocalDate transactionDate; // Optional - will use current date if not provided
 
-    @NotBlank(message = "Description is required")
     @Size(max = 500, message = "Description cannot exceed 500 characters")
-    private String description;
+    private String description; // Optional - will use default if not provided
 
     @Positive(message = "FX rate must be positive if provided")
     @Digits(integer = 4, fraction = 6, message = "FX rate must have max 4 digits before decimal and 6 after")

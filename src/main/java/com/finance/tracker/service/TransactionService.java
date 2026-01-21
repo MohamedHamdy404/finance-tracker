@@ -56,6 +56,23 @@ public class TransactionService {
             category = categoryService.getCategoryEntityById(userId, request.getCategoryId());
         }
 
+        // Apply defaults for optional fields
+        if (request.getCurrency() == null) {
+            request.setCurrency(account.getCurrency());
+        }
+        if (request.getTransactionDate() == null) {
+            request.setTransactionDate(LocalDate.now());
+        }
+        if (request.getDescription() == null || request.getDescription().trim().isEmpty()) {
+            request.setDescription(category != null ? category.getName() : "Transaction");
+        }
+        if (request.getTransactionType() == null) {
+            // Infer from category type if available, otherwise default to EXPENSE
+            request.setTransactionType(category != null && category.getType() != null 
+                ? TransactionType.valueOf(category.getType().name()) 
+                : TransactionType.EXPENSE);
+        }
+
         Transaction transaction = transactionMapper.toEntity(request);
         transaction.setUser(user);
         transaction.setAccount(account);
