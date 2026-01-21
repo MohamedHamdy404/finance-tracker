@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * DTO for updating category details (partial updates allowed)
+ * All fields are nullable - service validates at least one is provided
  */
 @Data
 @NoArgsConstructor

@@ -1,5 +1,3 @@
-// ============================================
-
 package com.finance.tracker.repository;
 
 import com.finance.tracker.entity.Account;
@@ -18,34 +16,35 @@ import java.util.Optional;
  */
 @Repository
 public interface AccountRepository extends JpaRepository<Account, Long> {
-    
+
     /**
      * Find all accounts for a specific user (with bank eagerly loaded)
      */
     @EntityGraph(attributePaths = {"bank"})
-    List<Account> findByUserId(Long userId);
-    
+    List<Account> findByUser_Id(Long userId);
+
     /**
      * Find all active accounts for a user (with bank eagerly loaded)
      */
     @EntityGraph(attributePaths = {"bank"})
-    List<Account> findByUserIdAndIsActiveTrue(Long userId);
-    
+    List<Account> findByUser_IdAndIsActiveTrue(Long userId);
+
     /**
      * Find accounts by user and currency (with bank eagerly loaded)
      */
     @EntityGraph(attributePaths = {"bank"})
-    List<Account> findByUserIdAndCurrency(Long userId, Currency currency);
-    
+    List<Account> findByUser_IdAndCurrency(Long userId, Currency currency);
+
     /**
      * Find account by ID and user ID (with bank eagerly loaded)
      */
     @EntityGraph(attributePaths = {"bank"})
     @Query("SELECT a FROM Account a WHERE a.id = :accountId AND a.user.id = :userId")
-    Optional<Account> findByIdAndUserId(@Param("accountId") Long accountId, @Param("userId") Long userId);
-    
+    Optional<Account> findByIdAndUser_Id(@Param("accountId") Long accountId,
+                                         @Param("userId") Long userId);
+
     /**
      * Check if account belongs to user
      */
-    boolean existsByIdAndUserId(Long accountId, Long userId);
+    boolean existsByIdAndUser_Id(Long accountId, Long userId);
 }

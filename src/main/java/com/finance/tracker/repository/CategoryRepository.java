@@ -1,5 +1,3 @@
-// ============================================
-
 package com.finance.tracker.repository;
 
 import com.finance.tracker.entity.Category;
@@ -17,40 +15,41 @@ import java.util.Optional;
  */
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, Long> {
-    
+
     /**
      * Find all categories for a user
      */
-    List<Category> findByUserId(Long userId);
-    
+    List<Category> findByUser_Id(Long userId);
+
     /**
      * Find all active categories for a user
      */
-    List<Category> findByUserIdAndIsActiveTrue(Long userId);
-    
+    List<Category> findByUser_IdAndIsActiveTrue(Long userId);
+
     /**
      * Find categories by user and type
      */
-    List<Category> findByUserIdAndType(Long userId, CategoryType type);
-    
+    List<Category> findByUser_IdAndType(Long userId, CategoryType type);
+
     /**
      * Find active categories by user and type
      */
-    List<Category> findByUserIdAndTypeAndIsActiveTrue(Long userId, CategoryType type);
-    
+    List<Category> findByUser_IdAndTypeAndIsActiveTrue(Long userId, CategoryType type);
+
     /**
      * Find category by ID and user ID (for authorization check)
      */
     @Query("SELECT c FROM Category c WHERE c.id = :categoryId AND c.user.id = :userId")
-    Optional<Category> findByIdAndUserId(@Param("categoryId") Long categoryId, @Param("userId") Long userId);
-    
+    Optional<Category> findByIdAndUser_Id(@Param("categoryId") Long categoryId,
+                                          @Param("userId") Long userId);
+
     /**
      * Check if category with same name and type exists for user
      */
-    boolean existsByUserIdAndNameAndType(Long userId, String name, CategoryType type);
-    
+    boolean existsByUser_IdAndNameAndType(Long userId, String name, CategoryType type);
+
     /**
      * Check if category belongs to user
      */
-    boolean existsByIdAndUserId(Long categoryId, Long userId);
+    boolean existsByIdAndUser_Id(Long categoryId, Long userId);
 }

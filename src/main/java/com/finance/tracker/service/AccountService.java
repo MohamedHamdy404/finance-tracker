@@ -63,7 +63,7 @@ public class AccountService {
     @Transactional(readOnly = true)
     public List<AccountResponse> getUserAccounts(Long userId) {
         log.debug("Fetching accounts for user: {}", userId);
-        return accountRepository.findByUserId(userId).stream()
+        return accountRepository.findByUser_Id(userId).stream()
                 .map(accountMapper::toResponse)
                 .collect(Collectors.toList());
     }
@@ -74,7 +74,7 @@ public class AccountService {
     @Transactional(readOnly = true)
     public List<AccountResponse> getActiveUserAccounts(Long userId) {
         log.debug("Fetching active accounts for user: {}", userId);
-        return accountRepository.findByUserIdAndIsActiveTrue(userId).stream()
+        return accountRepository.findByUser_IdAndIsActiveTrue(userId).stream()
                 .map(accountMapper::toResponse)
                 .collect(Collectors.toList());
     }
@@ -128,7 +128,7 @@ public class AccountService {
      * Internal helper to find account with authorization check
      */
     private Account findAccountByIdAndUserId(Long accountId, Long userId) {
-        return accountRepository.findByIdAndUserId(accountId, userId)
+        return accountRepository.findByIdAndUser_Id(accountId, userId)
                 .orElseThrow(() -> new ResourceNotFoundException(
                         "Account not found with id: " + accountId + " for user: " + userId));
     }

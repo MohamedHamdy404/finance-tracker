@@ -40,7 +40,7 @@ public class CategoryService {
         log.debug("Creating category for user: {}, name: {}, type: {}", userId, request.getName(), request.getType());
 
         // Check for duplicate
-        if (categoryRepository.existsByUserIdAndNameAndType(userId, request.getName(), request.getType())) {
+        if (categoryRepository.existsByUser_IdAndNameAndType(userId, request.getName(), request.getType())) {
             throw new DuplicateResourceException(
                     "Category with name '" + request.getName() + "' and type '" + request.getType() + "' already exists");
         }
@@ -65,7 +65,7 @@ public class CategoryService {
     @Transactional(readOnly = true)
     public List<CategoryResponse> getUserCategories(Long userId) {
         log.debug("Fetching categories for user: {}", userId);
-        return categoryRepository.findByUserId(userId).stream()
+        return categoryRepository.findByUser_Id(userId).stream()
                 .map(categoryMapper::toResponse)
                 .collect(Collectors.toList());
     }
@@ -76,7 +76,7 @@ public class CategoryService {
     @Transactional(readOnly = true)
     public List<CategoryResponse> getActiveUserCategories(Long userId) {
         log.debug("Fetching active categories for user: {}", userId);
-        return categoryRepository.findByUserIdAndIsActiveTrue(userId).stream()
+        return categoryRepository.findByUser_IdAndIsActiveTrue(userId).stream()
                 .map(categoryMapper::toResponse)
                 .collect(Collectors.toList());
     }
@@ -87,7 +87,7 @@ public class CategoryService {
     @Transactional(readOnly = true)
     public List<CategoryResponse> getCategoriesByType(Long userId, CategoryType type) {
         log.debug("Fetching categories for user: {}, type: {}", userId, type);
-        return categoryRepository.findByUserIdAndTypeAndIsActiveTrue(userId, type).stream()
+        return categoryRepository.findByUser_IdAndTypeAndIsActiveTrue(userId, type).stream()
                 .map(categoryMapper::toResponse)
                 .collect(Collectors.toList());
     }
@@ -118,7 +118,7 @@ public class CategoryService {
 
         // Check for duplicate name if name is being updated
         if (request.getName() != null && !request.getName().equals(category.getName())) {
-            if (categoryRepository.existsByUserIdAndNameAndType(userId, request.getName(), category.getType())) {
+            if (categoryRepository.existsByUser_IdAndNameAndType(userId, request.getName(), category.getType())) {
                 throw new DuplicateResourceException(
                         "Category with name '" + request.getName() + "' and type '" + category.getType() + "' already exists");
             }
@@ -149,7 +149,7 @@ public class CategoryService {
      * Internal helper to find category with authorization check
      */
     private Category findCategoryByIdAndUserId(Long categoryId, Long userId) {
-        return categoryRepository.findByIdAndUserId(categoryId, userId)
+        return categoryRepository.findByIdAndUser_Id(categoryId, userId)
                 .orElseThrow(() -> new ResourceNotFoundException(
                         "Category not found with id: " + categoryId + " for user: " + userId));
     }
