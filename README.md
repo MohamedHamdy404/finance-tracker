@@ -204,18 +204,27 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIs...
 | PUT | `/api/categories/{id}` | Update category |
 | DELETE | `/api/categories/{id}` | Soft delete category |
 
-### 💸 Transactions *(Coming Soon)*
+### 💸 Transactions
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | POST | `/api/transactions` | Create transaction |
+| POST | `/api/transactions/transfer` | Create transfer |
 | GET | `/api/transactions` | Get all transactions |
 | GET | `/api/transactions/{id}` | Get transaction by ID |
+| PUT | `/api/transactions/{id}` | Update transaction |
+| DELETE | `/api/transactions/{id}` | Delete transaction |
 
-### 📊 Dashboard *(Coming Soon)*
+### 📊 Dashboard
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | GET | `/api/dashboard` | Get overview stats |
-| GET | `/api/dashboard/monthly` | Monthly summary |
+
+### 🔒 Allocations
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/allocations` | Create allocation |
+| GET | `/api/allocations` | Get all allocations |
+| DELETE | `/api/allocations/{id}` | Delete allocation |
 
 ---
 
@@ -352,9 +361,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👨‍💻 Author
 
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
+**Mohamed Hamdy**
+- GitHub: [@MohamedHamdy404](https://github.com/MohamedHamdy404)
 
 ---
 

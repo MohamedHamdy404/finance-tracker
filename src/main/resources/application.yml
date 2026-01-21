@@ -2,13 +2,7 @@ spring:
   application:
     name: finance-tracker
 
-  # ------------------------------------------------------------
-  # TEMPORARY: Disable Spring Security auto-configuration
-  # so we can test APIs using X-USER-ID header without /login.
-  # REMOVE this when implementing JWT SecurityConfig.
-  # ------------------------------------------------------------
-  autoconfigure:
-    exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+  # Spring Security is now enabled and configured with JWT.
 
   # ------------------------------------------------------------
   # MVC: make unknown routes return 404 (not 500 via catch-all handler)
