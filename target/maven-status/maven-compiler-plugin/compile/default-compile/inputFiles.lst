@@ -50,6 +50,7 @@
 /home/ubuntu/finance-tracker/src/main/java/com/finance/tracker/entity/Category.java
 /home/ubuntu/finance-tracker/src/main/java/com/finance/tracker/mapper/AccountMapper.java
 /home/ubuntu/finance-tracker/src/main/java/com/finance/tracker/service/DashboardService.java
+/home/ubuntu/finance-tracker/src/main/java/com/finance/tracker/config/PostgreSQLEnumType.java
 /home/ubuntu/finance-tracker/src/main/java/com/finance/tracker/dto/account/AccountResponse.java
 /home/ubuntu/finance-tracker/src/main/java/com/finance/tracker/dto/transaction/TransactionResponse.java
 /home/ubuntu/finance-tracker/src/main/java/com/finance/tracker/repository/CategoryRepository.java

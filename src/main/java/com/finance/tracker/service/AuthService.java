@@ -47,7 +47,7 @@ public class AuthService {
     }
 
     @Transactional
-    public UserResponse registerUser(UserRegistrationRequest registrationRequest) {
+    public JwtResponse registerUser(UserRegistrationRequest registrationRequest) {
         if (userRepository.existsByEmail(registrationRequest.getEmail())) {
             throw new DuplicateResourceException("Error: Email is already in use!");
         }
@@ -58,6 +58,17 @@ public class AuthService {
         User savedUser = userRepository.save(user);
         log.info("User registered successfully: {}", savedUser.getEmail());
 
-        return userMapper.toResponse(savedUser);
+        // Automatically authenticate the user and generate JWT token
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(registrationRequest.getEmail(), registrationRequest.getPassword()));
+        
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        String jwt = jwtUtils.generateJwtToken(authentication);
+
+        return JwtResponse.builder()
+                .accessToken(jwt)
+                .id(savedUser.getId())
+                .email(savedUser.getEmail())
+                .build();
     }
 }

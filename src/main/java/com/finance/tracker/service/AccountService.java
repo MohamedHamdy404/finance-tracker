@@ -42,8 +42,9 @@ public class AccountService {
         // Get authenticated user
         User user = userService.getUserEntityById(userId);
 
-        // Get bank
-        Bank bank = bankService.getBankEntityById(request.getBankId());
+        // Get bank (use default Bank Misr if not provided)
+        Long bankId = request.getBankId() != null ? request.getBankId() : 1L;
+        Bank bank = bankService.getBankEntityById(bankId);
 
         // Map to entity
         Account account = accountMapper.toEntity(request);

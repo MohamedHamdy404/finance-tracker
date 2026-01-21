@@ -19,8 +19,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class AccountCreateRequest {
     
-    @NotNull(message = "Bank ID is required")
-    private Long bankId;
+    private Long bankId; // Optional - will use default bank if not provided
     
     @NotBlank(message = "Account name is required")
     @Size(max = 255)

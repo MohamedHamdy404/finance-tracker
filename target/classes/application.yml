@@ -15,9 +15,9 @@ spring:
 
   # Database Configuration
   datasource:
-    url: jdbc:postgresql://localhost:5432/finance_tracker
-    username: postgres
-    password: postgres
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/finance_tracker}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
     hikari:
       maximum-pool-size: 10
@@ -96,9 +96,9 @@ springdoc:
 # Application-specific Configuration
 app:
   jwt:
-    secret: ${JWT_SECRET:your-256-bit-secret-key-change-this-in-production-please-make-it-very-long}
-    expiration-ms: 86400000 # 24 hours
-    refresh-expiration-ms: 604800000 # 7 days
+    secret: ${APP_JWT_SECRET:your-256-bit-secret-key-change-this-in-production-please-make-it-very-long}
+    expiration-ms: ${APP_JWT_EXPIRATION_MS:86400000} # 24 hours
+    refresh-expiration-ms: ${APP_JWT_REFRESH_EXPIRATION_MS:604800000} # 7 days
 
 ---
 # Development Profile

@@ -6,6 +6,7 @@ com/finance/tracker/entity/Transaction.class
 com/finance/tracker/controller/AllocationController.class
 com/finance/tracker/exception/DuplicateResourceException.class
 com/finance/tracker/dto/account/AccountResponse$AccountResponseBuilder.class
+com/finance/tracker/config/PostgreSQLEnumType.class
 com/finance/tracker/dto/account/AccountUpdateRequest$AccountUpdateRequestBuilder.class
 com/finance/tracker/dto/dashboard/DashboardResponse$DashboardResponseBuilder.class
 com/finance/tracker/mapper/CategoryMapperImpl.class
